@@ -32,7 +32,8 @@ async def main():
         item = await maps_submissions.__anext__()
         if item.title not in maps:
             maps.append(item.title)
-            await send_message(chat_id, item.url)
+            send_string = item.title + "\n" + item.url
+            await send_message(chat_id, send_string)
 
 
 loop = asyncio.get_event_loop()
